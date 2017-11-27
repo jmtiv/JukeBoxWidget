@@ -1,6 +1,5 @@
-# Neatline Widget Example
+# JukeBox Widget
 
-## Hooks
+A [Neatline](http://neatline.org) widget for using audio files in Neatline exhibits.
 
-- neatline_editor_templates
-- neatline_public_templates
+

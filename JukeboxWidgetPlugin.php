@@ -1,13 +1,13 @@
 <?php
 
-class NeatlineWidgetExamplePlugin extends Omeka_Plugin_AbstractPlugin
+class JukeBoxWidgetPlugin extends Omeka_Plugin_AbstractPlugin
 {
 
     /**
      * Identifiers for this widget.
      */
-    const NAME = 'Neatline Example Widget';
-    const ID = 'NeatlineExampleWidget';
+    const NAME = 'JukeBox Widget';
+    const ID = 'JukeBoxWidget';
 
     protected $_filters = array(
         'neatline_exhibit_expansions',
