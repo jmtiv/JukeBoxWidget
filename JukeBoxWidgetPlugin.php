@@ -79,6 +79,30 @@ class JukeBoxWidgetPlugin extends Omeka_Plugin_AbstractPlugin
     }
 
     /**
+     * Filter for API endpoint on `Neatline.g`.
+     *
+     * @param array $globals The array of global properties.
+     * @param array $args Array of arguments, with `exhibit`.
+     * @return array The modified array.
+     */
+    public function filterNeatlinePresenters($globals, $args)
+    {
+        $exhibit = $args['exhibit'];
+        return $globals;
+    }
+
+    /**
+     * Register the exhibit expansion.
+     *
+     * @param array $tables Exhibit expansions.
+     * @return array The modified array.
+     */
+    public function filterNeatlineRecordExpansions($tables)
+    {
+        return $tables;
+    }
+
+    /**
      * Register the record widget.
      *
      * @param array $widgets Widgets, <NAME> => <ID>.
@@ -88,7 +112,6 @@ class JukeBoxWidgetPlugin extends Omeka_Plugin_AbstractPlugin
     {
         return array_merge($widgets, array(self::NAME => self::ID));
     }
-
 
     /** HOOKS **/
 
@@ -133,6 +156,17 @@ class JukeBoxWidgetPlugin extends Omeka_Plugin_AbstractPlugin
      * @param array $args Array of arguments, with `exhibit`.
      */
     public function hookNeatlinePublicTemplates($args)
+    {
+        // Get the Neatline Exhibit object.
+        $exhibit = $args['exhibit'];
+    }
+
+    /**
+     *
+     *
+     * @param array $args Array of arguments, with `exhibit`.
+     */
+    public function hookPublicContentTop($args)
     {
         // Get the Neatline Exhibit object.
         $exhibit = $args['exhibit'];
